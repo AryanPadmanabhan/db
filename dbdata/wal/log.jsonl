@@ -1,0 +1,7 @@
+{"type":"CreateTable","lsn":1,"name":"users","columns":[{"name":"id","col_type":"Int"},{"name":"name","col_type":"Text"}]}
+{"type":"Insert","lsn":2,"table":"users","row":{"id":{"Int":1},"name":{"Text":"Alice"}}}
+{"type":"Insert","lsn":3,"table":"users","row":{"id":{"Int":2},"name":{"Text":"Bob"}}}
+{"type":"Delete","lsn":4,"table":"users","equals":{"Eq":["id",{"Scalar":{"Int":2}}]}}
+{"type":"Insert","lsn":5,"table":"users","row":{"name":{"Text":"Alice"},"id":{"Int":1}}}
+{"type":"Insert","lsn":6,"table":"users","row":{"id":{"Int":2},"name":{"Text":"Bob"}}}
+{"type":"Delete","lsn":7,"table":"users","equals":{"Eq":["id",{"Scalar":{"Int":1}}]}}

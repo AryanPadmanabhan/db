@@ -1,0 +1,18 @@
+{
+  "tables": {
+    "test": {
+      "name": "test",
+      "columns": [
+        {
+          "name": "id",
+          "col_type": "Int"
+        },
+        {
+          "name": "name",
+          "col_type": "Text"
+        }
+      ]
+    }
+  },
+  "last_applied_lsn": 1
+}
