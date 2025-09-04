@@ -11,7 +11,6 @@ use tokio::fs as tfs;
 use crate::engine::{Predicate, RowValue, Value};
 
 /// Standard database page size (4KB) used for storage allocation and buffer management.
-/// This matches common database systems and filesystem block sizes for optimal I/O.
 pub const PAGE_SIZE: usize = 4096;
 
 /// Unique identifier for a database page within a table file.

@@ -19,21 +19,6 @@ use crate::engine::{Engine, Predicate, RowValue, Value};
 /// 4. **Execution**: Calls appropriate engine methods
 /// 5. **Formatting**: Returns results as formatted strings
 ///
-/// ## Supported SQL Statements
-///
-/// ### DDL (Data Definition Language)
-/// - `CREATE TABLE name (col1 INT, col2 TEXT, ...)`
-///
-/// ### DML (Data Manipulation Language)  
-/// - `INSERT INTO table (col1, col2) VALUES (val1, val2), ...`
-/// - `SELECT col1, col2 FROM table [WHERE conditions]`
-/// - `DELETE FROM table [WHERE conditions]`
-///
-/// ### WHERE Clause Support
-/// - Equality: `column = literal`
-/// - Logical AND: `col1 = val1 AND col2 = val2`
-/// - Literals: integers (`42`) and strings (`'text'`)
-///
 /// ## Arguments
 /// * `engine` - Database engine instance to execute against
 /// * `sql` - SQL statement text (must end with semicolon)

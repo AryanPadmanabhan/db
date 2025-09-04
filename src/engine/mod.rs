@@ -104,13 +104,13 @@ impl Engine {
     /// 5. Performs crash recovery by replaying uncommitted WAL records
     /// 6. Initializes the buffer pool (64 pages by default)
     ///
-    /// ## LSN-Based Recovery
+    /// LSN-Based Recovery
     /// 
     /// The recovery process uses Log Sequence Numbers (LSNs) to prevent
     /// double-application of operations:
-    /// - Reads `last_applied_lsn` from catalog
-    /// - Only replays WAL records with LSN > `last_applied_lsn`
-    /// - Updates `last_applied_lsn` after successful recovery
+    /// 1. Reads `last_applied_lsn` from catalog
+    /// 2. Only replays WAL records with LSN > `last_applied_lsn`
+    /// 3. Updates `last_applied_lsn` after successful recovery
     ///
     /// ## Arguments
     /// * `dir` - Directory path for database files (creates if doesn't exist)
@@ -160,8 +160,8 @@ impl Engine {
     ///
     /// This method implements LSN-based recovery to ensure exactly-once semantics:
     /// 
-    /// 1. **Read checkpoint**: Gets `last_applied_lsn` from catalog
-    /// 2. **Filter WAL**: Only reads records with LSN > `last_applied_lsn`  
+    /// 1. Read checkpoint: Gets `last_applied_lsn` from catalog
+    /// 2. Filter WAL: Only reads records with LSN > `last_applied_lsn`  
     /// 3. **Replay operations**: Applies each WAL record to restore state
     /// 4. **Update checkpoint**: Records new `last_applied_lsn` in catalog
     ///
